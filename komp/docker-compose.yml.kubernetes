@@ -1,0 +1,40 @@
+# docker-compose.yml
+version: '3'
+
+services:
+
+  # MySQL database
+  db:
+    image: fernan2/mariadb_wp_unit:v1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    volumes:
+      - db-data-mariadb:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  # Wordpress
+  wp:
+    image: fernan2/wp_unit:v1
+    environment:
+      WORDPRESS_DB_HOST: tdd-plugin-db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - wp-data:/var/www/html
+#      - ./:/var/www/html/wp-content/plugins/wordpress-tdd-plugin
+    ports:
+      - 80:80
+    depends_on:
+      - db
+
+# Persist DB and WordPress data across containers
+volumes:
+  db-data-mariadb:
+  wp-data:
+

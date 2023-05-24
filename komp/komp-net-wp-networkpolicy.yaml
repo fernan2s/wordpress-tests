@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  creationTimestamp: null
+  name: komp-net-wp
+spec:
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              io.kompose.network/komp-net-wp: "true"
+  podSelector:
+    matchLabels:
+      io.kompose.network/komp-net-wp: "true"
