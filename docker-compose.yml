@@ -22,9 +22,9 @@ services:
   wp:
     build:
       context: .
-      dockerfile: Dockerfile
       args:
         DOCKER_BUILDKIT: 1
+      dockerfile: Dockerfile
     restart: unless-stopped
     container_name: tdd-plugin-app
     environment:
