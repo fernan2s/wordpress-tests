@@ -1,6 +1,6 @@
 # Dockerfile
-USER root
 FROM wordpress
+USER root
 
 ARG PLUGIN_NAME=wordpress-tdd-plugin
 
