@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     container_name: container-wpapp
     environment:
-      WORDPRESS_DB_HOST: localhost
+      WORDPRESS_DB_HOST: container-mariadb
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
