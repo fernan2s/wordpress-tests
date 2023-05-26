@@ -5,7 +5,7 @@ services:
 
   # MySQL database
   db:
-    image: mariadb
+    image: fernan2/mariadb_wp_unit:v1
     restart: unless-stopped
     container_name: tdd-plugin-mariadb
     environment:
