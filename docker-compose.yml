@@ -7,7 +7,7 @@ services:
   db:
     image: fernan2/mariadb_wp_unit:v1
     restart: unless-stopped
-    container_name: tdd-plugin-mariadb
+    container_name: container-mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress
@@ -22,9 +22,9 @@ services:
   wp:
     image: fernan2/wp_unit:v1
     restart: unless-stopped
-    container_name: tdd-plugin-wpapp
+    container_name: container-wpapp
     environment:
-      WORDPRESS_DB_HOST: tdd-plugin-mariadb
+      WORDPRESS_DB_HOST: localhost
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
