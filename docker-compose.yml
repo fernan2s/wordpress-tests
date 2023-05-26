@@ -20,7 +20,6 @@ services:
 
   # Wordpress
   wp:
-    build:
     image: fernan2/wp_unit
     restart: unless-stopped
     container_name: tdd-plugin-app
