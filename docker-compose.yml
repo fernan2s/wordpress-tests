@@ -21,10 +21,7 @@ services:
   # Wordpress
   wp:
     build:
-      context: .
-      args:
-        DOCKER_BUILDKIT: 1
-      dockerfile: Dockerfile
+    image: fernan2/wp_unit
     restart: unless-stopped
     container_name: tdd-plugin-app
     environment:
