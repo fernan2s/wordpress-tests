@@ -20,7 +20,7 @@ services:
 
   # Wordpress
   wp:
-    image: fernan2/wp_unit
+    image: fernan2/wp_unit:v1
     restart: unless-stopped
     container_name: tdd-plugin-app
     environment:
